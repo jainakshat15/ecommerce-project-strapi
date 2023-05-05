@@ -16,6 +16,7 @@
     "@strapi/strapi": "4.8.2",
     "better-sqlite3": "8.0.1",
     "cloudinary": "^1.36.4",
+    "pg": "^8.10.0",
     "provider-upload-cloudimage": "^1.0.2",
     "stripe": "^11.15.0"
   },
