@@ -15,7 +15,12 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           const item = await strapi
             .service("api::product.product")
             .findOne(product.id);
-
+           
+            await strapi
+            .service("api::product.product").update(product.id, {data: {
+              stock : item.stock - product.attributes.quantity
+            }})
+          
           return {
             price_data: {
               currency: "inr",
@@ -45,6 +50,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
       return { stripeSession: session };
     } catch (error) {
+      console.log(error)
       ctx.response.status = 500;
       return { error };
     }

@@ -49,6 +49,9 @@
     },
     "flipkartPrice": {
       "type": "decimal"
+    },
+    "stock": {
+      "type": "integer"
     }
   }
 }
